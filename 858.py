@@ -51,7 +51,7 @@ def pulsa(angka):
                 a22 = int(input())
                 if a22 == 1:
                     print ("Terima kasih permintaan Anda sedang diproses")
-                    print ("*iklan* apakah mau mengambil penawaran iklan ?")
+                    print ("Sampaikan pd JIWA YANG BERSEDIH! Lagu viral dr Ghea Indrawari di LangitMusik Midium RP4400/3hr. Mau?")
                     print("1.Iya")
                     print("2.Tidak")
                     a221 = int(input())
@@ -63,9 +63,11 @@ def pulsa(angka):
                     exit()
             else:
                 print("Maaf nominal yang Anda masukan tidak sesuai.")
+                print("min 5000, max 1jt & tanpa. (titik) atau , (koma)")
                 exit()
         else:
             print("Nomor yang anda masukkan tidak valid")
+            print("(contoh: 08xxxx atau 628xxxx)")
             exit()
     
     elif angka == 3:
