@@ -4,7 +4,11 @@ def validation_number(number):
             return True
         else:
             return False
-
+def check_pulsa(have_pulsa, need_pulsa):
+    if have_pulsa >= need_pulsa:
+        return True
+    else:
+        return False
 def pulsa(angka):
     if angka == 1:
         print("Silahkan masukkan nomor tujuan Transfer Pulsa:\n (contoh: 08xxxx atau 628xxxx)")
@@ -22,6 +26,9 @@ def pulsa(angka):
         print(f"Hati2 penipuan. Anda akan Transfer\nPulsa {nominal} ke {nomor}?\n(Biaya 1850 & 1 Poin undian TP\niPhone14)\n1.Ya\n0.Home")
         confirm = int(input())
         if confirm == 1:
+            if check_pulsa(10000, nominal) == False:
+                print("Maaf, pulsa Anda tidak mencukupi untuk melakukan transfer pulsa.")
+                exit()
             print("Terima kasih permintaan Anda sedang diproses.")
         elif confirm == 0:
             main()
