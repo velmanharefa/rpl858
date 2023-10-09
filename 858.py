@@ -1,9 +1,8 @@
 def validation_number(number):
-    if len(str(number)) == 11 or len(str(number)) == 12:
-        if str(number)[0:2] == '08' or str(number)[0:2] == '62':
+    if number[0:2] == '08' or number[0:2] == '62':
+        if len(str(number)) == 11 or len(str(number)) == 12:
             return True
-        else:
-            return False
+    return False
 def check_pulsa(have_pulsa, need_pulsa):
     if have_pulsa >= need_pulsa:
         return True
@@ -11,20 +10,20 @@ def check_pulsa(have_pulsa, need_pulsa):
         return False
 def pulsa(angka):
     if angka == 1:
-        print("Silahkan masukkan nomor tujuan Transfer Pulsa:\n (contoh: 08xxxx atau 628xxxx)")
-        nomor = str(input())
+        print("Silahkan masukkan nomor tujuan Transfer Pulsa:\n(contoh: 08xxxx atau 628xxxx)")
+        nomor = str(input("> "))
         
         if validation_number(nomor) == False:
             print("nomor yang kamu masukan invalid silahkan menggunakan format: 08xxxx atau 628xxxx")
             exit()
         print("Silahkan masukkan jumlah pulsa yang akan\nditransfer : (min 5000, max 1jt & tanpa. (titik)\natau, (koma))")
-        nominal = int(input())
+        nominal = int(input("> "))
         if nominal < 5000:
             print("Jumlah pulsa yang Anda masukkan kurang dari Rp5000")
             exit()
 
         print(f"Hati2 penipuan. Anda akan Transfer\nPulsa {nominal} ke {nomor}?\n(Biaya 1850 & 1 Poin undian TP\niPhone14)\n1.Ya\n0.Home")
-        confirm = int(input())
+        confirm = int(input("> "))
         if confirm == 1:
             if check_pulsa(10000, nominal) == False:
                 print("Maaf, pulsa Anda tidak mencukupi untuk melakukan transfer pulsa.")
