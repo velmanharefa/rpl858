@@ -51,15 +51,15 @@ def pulsa(angka):
                     if a221 == 1:
                         print("*menu iklan")
                     elif a221 == 2:
-                        exit
+                        exit()
                 elif a22 == 2:
-                    exit
+                    exit()
             else:
                 print("Maaf nominal yang Anda masukan tidak sesuai.")
-                exit
+                exit()
         else:
             print("Nomor yang anda masukkan tidak valid")
-            exit
+            exit()
     
     elif angka == 3:
         print("Silahkan masukkan nomor tujuan yang anda Auto Transfer Pulsa:")
