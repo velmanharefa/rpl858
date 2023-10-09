@@ -39,7 +39,7 @@ def pulsa(angka):
         print("Silahkan masukkan nomor tujuan Minta Pulsa:")
         print("(contoh: 08xxxx atau 628xxxx)")
         a2 = str(input())
-        if a2[0:2] == "08" or a2[0:3] == "628" :
+        if validation_number(a2) == True:
             print("Silahkan masukkan jumlah pulsa yang akan\ndiminta : (min 5000, max 1jt & tanpa. (titik) atau , (koma))")
             a21 = int(input())
             if a21 >= 5000 and a21 <= 1000000:
