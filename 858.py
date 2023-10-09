@@ -43,7 +43,7 @@ def pulsa(angka):
         if a2[0:2] == "08" or a2[0:3] == "628" :
             print("Silahkan masukkan jumlah pulsa yang akan\ndiminta : (min 5000, max 1jt & tanpa. (titik) atau , (koma))")
             a21 = int(input())
-            if a21 <= 5000 or a21 >= 1000000:
+            if a21 >= 5000 and a21 <= 1000000:
                 print ("anda akan meminta pulsa", str(a21),"ke nomor", str(a2), "? (biaya 100)")
                 print("1.Ya")
                 print("2.Tidak")
@@ -58,16 +58,15 @@ def pulsa(angka):
                     if a221 == 1:
                         print("*menu iklan")
                     elif a221 == 2:
-                        print(" ")
-                        exit
+                        exit()
                 elif a22 == 2:
-                    exit
+                    exit()
             else:
                 print("Maaf nominal yang Anda masukan tidak sesuai.")
-                exit
+                exit()
         else:
             print("Nomor yang anda masukkan tidak valid")
-            exit
+            exit()
     
     elif angka == 3:
         print("Silahkan masukkan nomor tujuan yang anda Auto Transfer Pulsa:")
