@@ -34,8 +34,10 @@ def pulsa(angka):
                 elif a22 == 2:
                     exit
             else:
+                print("Maaf nominal yang Anda masukan tidak sesuai.")
                 exit
         else:
+            print("Nomor yang anda masukkan tidak valid")
             exit
     
     elif angka == 3:
