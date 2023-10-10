@@ -75,12 +75,12 @@ def pulsa(angka):
     elif angka == 4:
         print("Silahkan masukkan nomor tujuan yg akan")
         print("dihapus dari list Auto Transfer Pulsa:")
-        a4 = int(input()) - 1
+        a4 = int(input())
         if a4 < len(user_input_list):
             removed_data = user_input_list.pop(a4)
             print(f"nomor '{removed_data}' telah di hapus")
         else:
-            println("Maaf, permintaan Anda tidak dapat kami proses. Silahkan coba beberapa saat lagi." )
+            print("Maaf, permintaan Anda tidak dapat kami proses. Silahkan coba beberapa saat lagi." )
     elif angka == 5:
         print("Terima kasih permintaan Anda sedang diproses.")
         print("Sampaikan pd JIWA BERSEDIH! Lagu viral")
