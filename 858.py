@@ -1,3 +1,4 @@
+user_input_list = []
 def validation_number(number):
     if number[0:2] == '08' or number[0:2] == '62':
         if len(str(number)) == 11 or len(str(number)) == 12:
