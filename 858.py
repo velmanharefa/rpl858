@@ -1,4 +1,3 @@
-user_input_list = []
 def validation_number(number):
     if number[0:2] == '08' or number[0:2] == '62':
         if len(str(number)) == 11 or len(str(number)) == 12:
@@ -9,6 +8,8 @@ def check_pulsa(have_pulsa, need_pulsa):
         return True
     else:
         return False
+user_input_list = [] #user inputan data
+
 def pulsa(angka):
     if angka == 1:
         print("Silahkan masukkan nomor tujuan Transfer Pulsa:\n(contoh: 08xxxx atau 628xxxx)")
