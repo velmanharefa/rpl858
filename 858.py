@@ -9,6 +9,8 @@ def check_pulsa(have_pulsa, need_pulsa):
     else:
         return False
         
+user_input_list = [] #user inputan data
+
 def pulsa(angka):
     if angka == 1:
         print("Silahkan masukkan nomor tujuan Transfer Pulsa:\n(contoh: 08xxxx atau 628xxxx)")
@@ -71,7 +73,6 @@ def pulsa(angka):
             print("(contoh: 08xxxx atau 628xxxx)")
             exit()
     
-    user_input_list = [] #user inputan data
     elif angka == 3:
         print("Silahkan masukkan nomor tujuan yang anda Auto Transfer Pulsa:")
         nomor_tujuan = input()
