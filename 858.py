@@ -8,12 +8,9 @@ def check_pulsa(have_pulsa, need_pulsa):
         return True
     else:
         return False
-<<<<<<< HEAD
 list_Auto_TP = {'081360255137':'1'}
-=======
         
 user_input_list = [] #user inputan data
->>>>>>> 80eda653d5d716bebb1bba83bd0d723503c4cf57
 
 global user_pulsa
 def pulsa(angka, user_pulsa):
@@ -119,11 +116,9 @@ def pulsa(angka, user_pulsa):
         print("Silahkan masukkan nomor tujuan yg akan")
         print("dihapus dari list Auto Transfer Pulsa:")
         a4 = int(input())
-<<<<<<< HEAD
         if a4 < len(list_Auto_TP):
             removed_data = list_Auto_TP.pop(a4)
             print(f"nomor '{removed_data}' telah di hapus")
-=======
         print(f"Anda akan menghapus nomor '{a4}' dari daftar Auto TP anda?")
         print("1. Ya")
         print("0. Home")
@@ -136,7 +131,6 @@ def pulsa(angka, user_pulsa):
                 exit()
         elif confirm == 0:
             main()
->>>>>>> 80eda653d5d716bebb1bba83bd0d723503c4cf57
         else:
             print("Maaf, permintaan Anda tidak dapat kami proses. Silahkan coba beberapa saat lagi." )
             exit()
