@@ -65,6 +65,8 @@ def pulsa(angka, user_pulsa):
                         exit()
                     elif a221 == 2:
                         exit()
+                elif a22 == 0:
+                    main()
                 elif a22 == 2:
                     exit()
             else:
