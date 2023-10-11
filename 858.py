@@ -58,6 +58,7 @@ def pulsa(angka):
                     a221 = int(input())
                     if a221 == 1:
                         print("*menu iklan")
+                        exit()
                     elif a221 == 2:
                         exit()
                 elif a22 == 2:
