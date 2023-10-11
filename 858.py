@@ -73,7 +73,40 @@ def pulsa(angka):
     
     elif angka == 3:
         print("Silahkan masukkan nomor tujuan yang anda Auto Transfer Pulsa:")
+        nomor_tujuan = input()
+
+        if not validation_number(nomor_tujuan):
+            print("nomor yang kamu masukan invalid silahkan menggunakan format: 08xxxx atau 628xxxx")
+            exit()
+
+        print("Masukkan jumlah pulsa minimal 5000: ")
+        jumlah_pulsa = int(input())
+
+        if jumlah_pulsa < 5000:
+            print("Jumlah minimal pulsa adalah 5000!")
+            exit()   
+
+        tgl_transfer = input("Masukkan tanggal transfer: ")
+        
+        validasi_pulsa()
+        print("jumlah pulsa sekarang = ",user_pulsa)
+
+        print("Hati2 Penipuan.Anda akan Tranfer Pulsa jumlah pulsa ke nomor tujuan setiap tanggal tertentu(biaya 180 & 1poin undian TP iPhone14)")
+        print("1.Ya")
+        print("2.Tidak")
         a3 = int(input())
+        if a3 == 1:
+            print("Terima kasih permintaan Anda sedang diproses.")
+            print("Sampaikan pd JIWA BERSEDIH! Lagu viral dr Ghea Indrawari di LangitMusik Midium Rp4400/3hr. Mau?")
+            print("1.Ya")
+            print("2.Tidak")
+            a31 = int(input())
+            if a31 == 1:
+                print("Terima kasih permintaan Anda sedang diproses.")
+            else:
+                print("Terima kasih.")
+        else:
+            print("Terima kasih.")
     elif angka == 4:
         print("Silahkan masukkan nomor tujuan yg akan")
         print("dihapus dari list Auto Transfer Pulsa:")
