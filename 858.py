@@ -8,9 +8,10 @@ def check_pulsa(have_pulsa, need_pulsa):
         return True
     else:
         return False
-user_input_list = [] #user inputan data
+list_Auto_TP = {'081360255137':'1'}
 
-def pulsa(angka):
+global user_pulsa
+def pulsa(angka, user_pulsa):
     if angka == 1:
         print("Silahkan masukkan nomor tujuan Transfer Pulsa:\n(contoh: 08xxxx atau 628xxxx)")
         nomor = str(input("> "))
@@ -27,9 +28,10 @@ def pulsa(angka):
         print(f"Hati2 penipuan. Anda akan Transfer\nPulsa {nominal} ke {nomor}?\n(Biaya 1850 & 1 Poin undian TP\niPhone14)\n1.Ya\n0.Home")
         confirm = int(input("> "))
         if confirm == 1:
-            if check_pulsa(10000, nominal) == False:
+            if check_pulsa(user_pulsa, nominal) == False:
                 print("Maaf, pulsa Anda tidak mencukupi untuk melakukan transfer pulsa.")
                 exit()
+            user_pulsa = user_pulsa - nominal;
             print("Terima kasih permintaan Anda sedang diproses.")
         elif confirm == 0:
             main()
@@ -82,14 +84,7 @@ def pulsa(angka):
         print("Masukkan jumlah pulsa minimal 5000: ")
         jumlah_pulsa = int(input())
 
-        if jumlah_pulsa < 5000:
-            print("Jumlah minimal pulsa adalah 5000!")
-            exit()   
-
         tgl_transfer = input("Masukkan tanggal transfer: ")
-        
-        validasi_pulsa()
-        print("jumlah pulsa sekarang = ",user_pulsa)
 
         print("Hati2 Penipuan.Anda akan Tranfer Pulsa jumlah pulsa ke nomor tujuan setiap tanggal tertentu(biaya 180 & 1poin undian TP iPhone14)")
         print("1.Ya")
@@ -97,6 +92,13 @@ def pulsa(angka):
         a3 = int(input())
         if a3 == 1:
             print("Terima kasih permintaan Anda sedang diproses.")
+            
+            if check_pulsa(user_pulsa,jumlah_pulsa) == False:
+                print("SMS : pulsa anda tidak mencukupi")
+            else:
+                list_Auto_TP[nomor_tujuan] = tgl_transfer;
+                # print(list_Auto_TP)
+            
             print("Sampaikan pd JIWA BERSEDIH! Lagu viral dr Ghea Indrawari di LangitMusik Midium Rp4400/3hr. Mau?")
             print("1.Ya")
             print("2.Tidak")
@@ -111,8 +113,8 @@ def pulsa(angka):
         print("Silahkan masukkan nomor tujuan yg akan")
         print("dihapus dari list Auto Transfer Pulsa:")
         a4 = int(input())
-        if a4 < len(user_input_list):
-            removed_data = user_input_list.pop(a4)
+        if a4 < len(list_Auto_TP):
+            removed_data = list_Auto_TP.pop(a4)
             print(f"nomor '{removed_data}' telah di hapus")
         else:
             print("Maaf, permintaan Anda tidak dapat kami proses. Silahkan coba beberapa saat lagi." )
@@ -142,6 +144,6 @@ def main():
     print("6.Cek Kupon Undian TP")
 
     angka =int (input("Masukan menu: "))
-    pulsa(angka)
+    pulsa(angka,10000)
 if __name__ == "__main__":
     main()
